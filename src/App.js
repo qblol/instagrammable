@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { View } from 'react-native'
+import { Container } from 'native-base'
 import Headers from './components/Header'
 import Footers from './components/Footer'
-import Contents from './components/Contents'
+import Contents from './components/Content'
 
 export default class App extends Component {
   render() {
       return (
-        <View>
+        <Container>
           <Headers />
           <Contents />
           <Footers />
-        </View>
+        </Container>
       );
   }
 }
