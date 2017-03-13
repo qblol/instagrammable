@@ -3,17 +3,12 @@ import { Navigator } from 'react-native'
 import { Container } from 'native-base'
 import Main from './components/Main'
 import Cam from './components/Camera'
+import Forms from './components/Form'
 
 export default class App extends Component {
   constructor(){
     super()
     this.renderScene = this.renderScene.bind(this)
-  }
-
-  toCameraScene(navigator){
-    navigator.push({
-      scene: 'camera'
-    })
   }
 
   renderScene(route, navigator){
@@ -25,6 +20,10 @@ export default class App extends Component {
       case 'camera':
         return (
           <Cam route={route} navigator={navigator} />
+        )
+      case 'form':
+        return (
+          <Forms route={route} navigator={navigator} />
         )
       default:
         return (

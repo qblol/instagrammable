@@ -4,12 +4,14 @@ import {
   Dimensions,
   StyleSheet,
   Text,
-  TouchableHighlight,
   View
 } from 'react-native';
 import Camera from 'react-native-camera';
 
 export default class Cam extends Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -28,6 +30,9 @@ export default class Cam extends Component {
   takePicture() {
     this.camera.capture()
       .then((data) => console.log(data))
+      .then(()=>this.props.navigator.push({
+        scene: 'form'
+      }))
       .catch(err => console.error(err));
   }
 }
